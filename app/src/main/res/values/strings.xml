@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">IT News</string>
+
+    <!-- Text to display in the list when there are no news article [CHAR LIMIT=NONE] -->
+    <string name="no_news">No news found.</string>
+
+    <!-- Error message when there is no internet connectivity [CHAR LIMIT=NONE] -->
+    <string name="no_internet_connection">No internet connection.</string>
+
+    <!-- Placeholder tag for the section TextView [CHAR LIMIT=20] -->
+    <string name="tag_section">Section</string>
+    <!-- Placeholder tag for the item title TextView [CHAR LIMIT=20] -->
+    <string name="tag_item_title">Long placeholder for news title that might wrap 2 lines of text</string>
+    <!-- Placeholder tag for the date TextView [CHAR LIMIT=20] -->
+    <string name="tag_date">Mar 6, 2010</string>
+
+    <!-- Tag to understand that the following TextView is the author/contributor name [CHAR
+    LIMIT=20] -->
+    <string name="contributor">Contributor:</string>
+    <!-- Placeholder tag for the author/contributor name TextView [CHAR LIMIT=20] -->
+    <string name="tag_author">Author name</string>
+
+    <!-- Title of the settings [CHAR LIMIT=NONE] -->
+    <string name="settings_menu_item">Settings</string>
+    <string name="settings_title">News Settings</string>
+
+
+    <!-- Strings for the search EditText in Preference [CHAR LIMIT=NONE]-->
+    <string name="settings_edit_text_label">Any specific topic of interest?</string>
+    <string name="settings_edit_text_key" translatable="false">search-content</string>
+    <string name="settings_edit_text_default">Android</string>
+    <string name="settings_edit_text_hint">If empty, default topic is Android</string>
+
+
+    <!-- Strings for order-by Preference [CHAR LIMIT=30] -->
+    <string name="settings_order_by_label">Order By</string>
+    <string name="settings_order_by_key" translatable="false">order-by</string>
+    <string name="settings_order_by_default" translatable="false">@string/settings_order_by_most_recent_value</string>
+
+    <!-- Label for order-by most recent option [CHAR LIMIT=20] -->
+    <string name="settings_order_by_most_recent_label">Most recent</string>
+    <string name="settings_order_by_most_recent_value" translatable="false">newest</string>
+
+    <!-- Label for order-by most relevant option [CHAR LIMIT=20] -->
+    <string name="settings_order_by_relevance_label">Relevance</string>
+    <string name="settings_order_by_relevance_value" translatable="false">relevance</string>
+
+    <!-- Label for the numbers of article [CHAR LIMIT=NONE] -->
+    <string name="settings_article_number_label">Article Number(max:50)</string>
+    <string name="settings_article_number_key" translatable="false">page-size</string>
+    <string name="settings_article_number_default" translatable="false">10</string>
+</resources>
