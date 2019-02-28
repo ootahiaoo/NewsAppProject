@@ -33,8 +33,10 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
     //URL for news data from the guardian open platform.
     private static final String GUARDIAN_REQUEST_URL = "https://content.guardianapis.com/search";
 
-    /** Please put your API key here. **/
-    private static final String API_KEY = "";
+    /**
+     * Please put your API key here.
+     **/
+    private static final String API_KEY = BuildConfig.THE_GUARDIAN_API_KEY;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +56,8 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
          * If the device has an internet connection, set up the ListView and its adapter,
          * to prepare to receive the news data.
          */
-        ConnectivityManager cm = (ConnectivityManager) this.getSystemService(Context
-                .CONNECTIVITY_SERVICE);
+        ConnectivityManager cm =
+                (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
         boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
         if (isConnected == false) {
@@ -72,8 +74,8 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
              */
             newsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int position, long
-                        l) {
+                public void onItemClick(AdapterView<?> adapterView, View view, int position,
+                                        long l) {
                     News currentNews = adapter.getItem(position);
                     Uri newsUri = Uri.parse(currentNews.getUrl());
                     Intent websiteIntent = new Intent(Intent.ACTION_VIEW, newsUri);
@@ -100,20 +102,20 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         // Get the String values for the preference menu.
-        String orderBy  = sharedPrefs.getString(
-                getString(R.string.settings_order_by_key),
+        String orderBy = sharedPrefs.getString(getString(R.string.settings_order_by_key),
                 getString(R.string.settings_order_by_default));
 
-        String articleNumber = sharedPrefs.getString(
-                getString(R.string.settings_article_number_key),
-                getString(R.string.settings_article_number_default));
+        String articleNumber =
+                sharedPrefs.getString(getString(R.string.settings_article_number_key),
+                        getString(R.string.settings_article_number_default));
 
-        String searchContent = sharedPrefs.getString(
-                getString(R.string.settings_edit_text_key),
+        String searchContent = sharedPrefs.getString(getString(R.string.settings_edit_text_key),
                 getString(R.string.settings_edit_text_default));
         //If the topic preference is left empty, the default topic is Android.
-        if (searchContent.replaceAll(" ", "").isEmpty()){
-            searchContent = getString(R.string.settings_edit_text_default);};
+        if (searchContent.replaceAll(" ", "").isEmpty()) {
+            searchContent = getString(R.string.settings_edit_text_default);
+        }
+        ;
 
         // Parse the URL for the news data, to prepare for the URI builder method.
         Uri baseUri = Uri.parse(GUARDIAN_REQUEST_URL);
